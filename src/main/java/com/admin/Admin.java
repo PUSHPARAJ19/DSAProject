@@ -5,8 +5,6 @@ import java.util.*;
 import com.faculty.FacultyInfo;
 import com.student.StudentInfo;
 
-//import StudenRecordProject.ReadInfo;
-//import StudenRecordProject.WriteInfo;
 
 public class Admin implements Serializable {
 	
