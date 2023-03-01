@@ -11,28 +11,35 @@
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
 <style>
-
+ body{
+  background-image: url("college.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
  a{
    text-decoration:none;
    color:black;
    }
+   h2{
+    text-align: center;
+    
+   }
 </style>
 </head>
 <body>
-       <h2 class="text-center" style="color:blue">STUDENT RECORD SYSTEM</h2> 
-       <p>
-        <h3 class="text-center">Welcome To SRS</h3>
-      
-       </p>               
+       <h2 class="text-center" style="color:rgb(241, 245, 246)">STUDENT RECORD SYSTEM</h2> 
+                     
   <div class="container py-5">
          <div class="row row-cols-1 row-cols-md-3 g-4">
        
           <div class="col">
             
             <div class="card h-100">
-               <a href="adminLogin.html" style="text-decoration:none;" >
+              
+               <a href="src/main/webapp/adminLogin.html" style="text-decoration:none;" >
+              
                 <div class="card-body">
-                      <h5 class="card-title text-center">Admin</h5>
+                     <h5 class="card-title text-center">Admin</h5>
                      </div>
             </a>
              
@@ -43,9 +50,10 @@
            <div class="col">
             
             <div class="card h-100">
-               <a href="FacultyLogin.jsp"  style="text-decoration:none;" title="Manage Food Info">
-              <div class="card-body">
-                      <h5 class="card-title text-center">Faculty</h5>
+               <a href="src/main/webapp/FacultyLogin.jsp"  style="text-decoration:none;" >
+               
+                <div class="card-body">
+                     <h5 class="card-title text-center">Faculty</h5>
                      </div>
             </a>
              
@@ -55,9 +63,10 @@
            <div class="col">
             
             <div class="card h-100">
-             <a href="StudentLogin.jsp"  style="text-decoration:none;" title="Manage Food Info">
+             <a href="src/main/webapp/StudentLogin.jsp"  style="text-decoration:none;" title="Manage Food Info">
                <div class="card-body">
-                      <h5 class="card-title text-center">Student</h5>
+                   
+                <h5 class="card-title text-center">Student</h5>
                      </div>
             </a>
              

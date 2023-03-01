@@ -15,16 +15,13 @@ public class Admin implements Serializable {
 		String details[] = new String[9];
 		String roll="";
 		int i=0;
-           //roll = ((String)e.getKey());
 				for(Map.Entry e1: li.entrySet())
 				{
 					details[i++] = (String)e1.getValue();
-					//System.out.println(details[i]);
 				}
 
 		StudentInfo  student = new StudentInfo(details[0],details[1],details[2],details[3],details[4],details[5],details[6],details[7],details[8]);
 	student.setRollNo(roll);
-	//System.out.println(Arrays.toString(details));
 		return student;
 	}
    public static FacultyInfo getFaculty(LinkedHashMap<String,String> li)
@@ -36,7 +33,6 @@ public class Admin implements Serializable {
 				for(Map.Entry e1: li.entrySet())
 				{
 					details[i++] = (String)e1.getValue();
-					//System.out.println(details[i]);
 				}
 				
               FacultyInfo faculty = new FacultyInfo(details[0],details[1],details[2],details[3],details[4],details[5],details[6],details[7],details[8]);
@@ -100,20 +96,8 @@ public class Admin implements Serializable {
 				
 				if(hm==null)
 					hm = new TreeMap<String,LinkedHashMap<String,String>>();
-				
-					//System.out.println("Enter Admimn details");
-					//System.out.println("(Name,Dob,Email,Address,YearOfJoining)");
-//					LinkedHashMap<String,String> stu = new LinkedHashMap<String,String>();
-//					stu.put("Name", name);
-//					stu.put("Dob", dob);
-//					stu.put("Email",email);
-//					stu.put("Address",address);
-//					stu.put("YearOfJoin",year);
-					hm.put("admin"+hm.entrySet().size()+1,admin);
-					//System.out.println("Are you want to add Admin ? \n 1.Yes\n 2.No");
-					//c=sc.nextInt();
-					
-				//}
+				hm.put("admin"+hm.entrySet().size()+1,admin);
+	
 				FileOutputStream fout12 = new FileOutputStream("D:/III Year Project/DSAProject/AdminDetails.txt");
 				ObjectOutputStream out12 = new ObjectOutputStream(fout12);
 				out12.writeObject(hm);
@@ -149,16 +133,13 @@ public class Admin implements Serializable {
 	     if(hm.containsKey(id))
 	     {
 	    	 String password = hm.get(id).get("Name").toLowerCase()+"@"+hm.get(id).get("Dob").substring(8);
-	        //System.out.println(hm.get(id).get("Dob").substring(8));
-	    	 if(!pass.equals(password))
+	        if(!pass.equals(password))
 	         {
-	        	 //System.out.println("*****Enter a Valid Password*****");
-	        	 return false;
+				return false;
 	         }
 	     }
 	     else
 	     {
-	    	// System.out.println("*****Enter a valid UserName*****");
 	    	 return false;
 	     }
 	     ois.close();
@@ -185,14 +166,12 @@ public class Admin implements Serializable {
 			{
 				 if(!tm.get(id).equals(pass))
 				 {
-					 //System.out.println("***** Enter a valid password *****");
 					 return false;
 				 }
 				 
 			}
 			else
 			{
-				//System.out.println("***** Enter a Valid UserName *****");
 				return false;
 			}
 			
@@ -220,13 +199,11 @@ public class Admin implements Serializable {
 			{
 				 if(!tm.get(name).equals(pass))
 				 {
-					 //System.out.println("***** Enter a valid Password*****");
 					 return false;
 				 }
 			}
 			else
 			{
-				//System.out.println("***** Enter a Valid UserName *****");
 				return false;
 			}
 			
@@ -380,33 +357,7 @@ public class Admin implements Serializable {
 	}
 
 	
-	public static boolean search(TreeMap<String,LinkedHashMap<String,String>> li) throws IOException, ClassNotFoundException
-	{
-	   if(li==null) {
-		   //System.out.println("Details are not sufficient!");
-		   return false;
-	   }
-	   else  
-		{
-			System.out.println("Enter the Student Id:");
-		   Scanner sc = new Scanner(System.in);
-		   String id = sc.next();
-		   if(li.containsKey(id))
-		   {
-			  System.out.println("Details of "+id+" :");
-			  for(Map.Entry e: li.get(id).entrySet())
-			  {
-				  System.out.println(e.getKey()+": "+e.getValue());
-			  }
-			  return true;
-		   }
-		   else
-		   {
-			   return false;
-		   }
-	}
-		   
-	}
+
 
 	public static String id_create(TreeMap<String,LinkedHashMap<String,String>> tm)
 	{

@@ -75,12 +75,6 @@ public class FacultyInfo {
 	public void setBloodgroup(String bloodgroup) {
 		this.bloodgroup = bloodgroup;
 	}
-//	public String getDegree() {
-//		return degree;
-//	}
-//	public void setDegree(String degree) {
-//		this.degree = degree;
-//	}
 	public String getCourse() {
 		return course;
 	}
